@@ -193,7 +193,7 @@ describe('features/modeling - update label', function() {
   }));
 
 
-  it('should create missing category and categoryValue for group with whitespace only string', inject(function(modeling, elementRegistry) {
+  it('should not create missing category and categoryValue for group with whitespace only string', inject(function(modeling, elementRegistry) {
 
     // given
     var group_2 = elementRegistry.get('Group_2');
@@ -202,8 +202,8 @@ describe('features/modeling - update label', function() {
     modeling.updateLabel(group_2, ' ');
 
     // then
-    expect(group_2.businessObject.categoryValueRef.value).to.equal(null);
-    expect(group_2.label).to.exist;
+    expect(group_2.businessObject.categoryValueRef).to.not.exist;
+    expect(group_2.label).to.not.exist;
   }));
 
 
