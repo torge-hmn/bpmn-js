@@ -179,6 +179,34 @@ describe('features/modeling - update label', function() {
   }));
 
 
+  it('should create missing category and categoryValue for group', inject(function(modeling, elementRegistry) {
+
+    // given
+    var group_2 = elementRegistry.get('Group_2');
+
+    // when
+    modeling.updateLabel(group_2, 'foo');
+
+    // then
+    expect(group_2.businessObject.categoryValueRef.value).to.equal('foo');
+    expect(group_2.label).to.exist;
+  }));
+
+
+  it('should create missing category and categoryValue for group with whitespace only string', inject(function(modeling, elementRegistry) {
+
+    // given
+    var group_2 = elementRegistry.get('Group_2');
+
+    // when
+    modeling.updateLabel(group_2, ' ');
+
+    // then
+    expect(group_2.businessObject.categoryValueRef.value).to.equal(null);
+    expect(group_2.label).to.exist;
+  }));
+
+
   it('should properly fire events.changed after event name change', inject(
     function(modeling, elementRegistry, eventBus) {
 

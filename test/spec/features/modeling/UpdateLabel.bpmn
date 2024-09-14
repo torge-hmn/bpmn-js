@@ -10,6 +10,7 @@
       <bpmn:text></bpmn:text>
     </bpmn:textAnnotation>
     <bpmn:group id="Group_1" categoryValueRef="CategoryValue_1" />
+    <bpmn:group id="Group_2" />
   </bpmn:process>
   <bpmn:category id="Category_1">
     <bpmn:categoryValue id="CategoryValue_1" />
@@ -40,6 +41,9 @@
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Group_1_di" bpmnElement="Group_1">
         <dc:Bounds x="165" y="190" width="150" height="120" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Group_2_di" bpmnElement="Group_2">
+        <dc:Bounds x="350" y="190" width="150" height="120" />
       </bpmndi:BPMNShape>
     </bpmndi:BPMNPlane>
   </bpmndi:BPMNDiagram>
